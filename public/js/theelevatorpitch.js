@@ -1,6 +1,7 @@
 $(function() {
     function scrollPage(top) {
         $('html,body').animate({ scrollTop: top }, 'normal');
+        return false;
     }
 
     function initProgress(time) {
@@ -50,15 +51,27 @@ $(function() {
     });
 
     $('.btn-scroll-down').click(function () {
+        if ($(this).attr('id') == 'btn-submit') {
+            var empty = false;
+            $(':text').each(function() {
+                if ($(this).val().length <= 0) {
+                    empty = true;
+                    return false;    
+                }
+            });
+            if (empty == true) {
+                return false; 
+            }
+        }
         var i = $('.btn-scroll-down').index(this)
         var p = $('hr').eq(i + 1).offset().top;
-        scrollPage(p);       
+        return scrollPage(p);       
     });
 
     $('.btn-scroll-up').click(function () {
         var i = $('.btn-scroll-up').index(this)
         var p = $('hr').eq(i + 1).offset().top;
-        scrollPage(p);       
+        return scrollPage(p);       
     });
 
     $('#btn-submit').click(function() {
