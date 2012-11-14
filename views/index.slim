@@ -4,8 +4,7 @@ html lang="ja"
     meta charset="utf-8"
     title The Elevatorpitch 
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    meta name="description" content=""
-    meta name="author" content=""
+    meta name="description" content="エレベーターピッッチの作成をお手伝いします。テンプレートに言葉をはめて、30 秒で話せるようになりましょう。"
 
     <!-- Le styles -->
     link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"
@@ -64,81 +63,97 @@ html lang="ja"
         ul class="nav nav-pills pull-right"
           li
             a href="#" Contact
-        h3 class="muted" The Elevatorpitch 
+        h3 class="muted"
+            a href="/" The Elevatorpitch 
 
       hr
 
       div class="jumbotron"
-        h1 Super awesome marketing speak!
-        p class="lead" Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-        a class="btn btn-large btn-success btn-start" href="#" Start !! 
+        h1 エレベータピッチを君の手に
+        p class="lead" The Elevatorpitch はエレベーターピッチの作成のお手伝いをします。用意されたテンプレートに言葉を埋め、30 秒で話せられるように練習することができます。さあ、早速試してみましょう。
+        button class="btn btn-success btn-block btn-scroll-down" エレベーターピッチを作成する 
 
-      hr class="section-form"
+      hr style="margin-top:800px;" 
 
-      div class="row-fluid marketing"
-        form class="form-pitch"
+      div class="row-fluid"
+        div class="span12"
+          p テンプレートを埋めて、エレベーターピッチを決めましょう。
+      div class="row-fluid"
+        div class="span12"
+          form class="form-pitch"
             div class="controls"
-              input class="span7" type="text" placeholder="潜在的なニーズを満たしたり、抱えている課題を解決したり"
+              input class="span9" type="text" placeholder="抱えている課題を解決"
               span  class="help-inline" したい
             div class="controls"
-              input class="span7" type="text" placeholder="対象顧客"
+              input class="span9" type="text" placeholder="対象顧客"
               span  class="help-inline" 向けの 
             div class="controls"
-              input class="span7"  type="text" placeholder="プロダクト名"
+              input class="span9"  type="text" placeholder="プロダクト名"
               span  class="help-inline" というプロダクトは
             div class="controls"
-              input type="text" placeholder="プロダクトのカテゴリー"
-              span  class="help-inline" です。 
+              input class="span9"  type="text" placeholder="プロダクトのカテゴリー"
+              span  class="help-inline" です。  これは、
             div class="controls"
-              span  class="help-inline" これは
-            div class="controls"
-              input type="text" placeholder="重要な利点、耐火に見合う説得力のある理由"
+              input  class="span9" type="text" placeholder="重要な利点、対価に見合う説得力のある理由"
               span  class="help-inline" ができ
             div class="controls"
-              input type="text" placeholder="代替手段の最右翼"
+              input  class="span9" type="text" placeholder="代替手段の最右翼"
               span  class="help-inline" とは違って 
             div class="controls"
-              input type="text" placeholder="差別化の決定的な特徴"
+              input  class="span9" type="text" placeholder="差別化の決定的な特徴"
               span  class="help-inline" が備わっています。 
-      div class="jumbotron"
-        a class="btn btn-large btn-success btn-try" href="#" Try !! 
+      div class="row-fluid"
+        div class="span12"
+          button class="btn btn-success btn-scroll-down btn-block " id="btn-submit" 決まったら次は練習ですね。 
  
-      hr class="section-try"
+      hr style="margin-top:800px;" 
 
       div class="jumbotron"
-        a class="btn btn-large btn-success" href="#" Again
-        a class="btn btn-large btn-warning" href="#" Again 
-      div class="progress progress-striped active"
-        div class="bar" style="width: 40%;"
-      div class="row-fluid marketing"
 
-        form
-            div class="controls"
-              input class="span7" type="text" placeholder="潜在的なニーズを満たしたり、抱えている課題を解決したり"
-              span  class="help-inline" したい
-            div class="controls"
-              input class="span7" type="text" placeholder="対象顧客"
-              span  class="help-inline" 向けの 
-            div class="controls"
-              input class="span7"  type="text" placeholder="プロダクト名"
-              span  class="help-inline" というプロダクトは
-            div class="controls"
-              input type="text" placeholder="プロダクトのカテゴリー"
-              span  class="help-inline" です。 
-            div class="controls"
-              span  class="help-inline" これは
-            div class="controls"
-              input type="text" placeholder="重要な利点、耐火に見合う説得力のある理由"
-              span  class="help-inline" ができ
-            div class="controls"
-              input type="text" placeholder="代替手段の最右翼"
-              span  class="help-inline" とは違って 
-            div class="controls"
-              input type="text" placeholder="差別化の決定的な特徴"
-              span  class="help-inline" が備わっています。 
+      div class="row-fluid"
+        div class="span6"
+          button id="btn_count_start" class="btn btn-success btn-block toggle" カウントダウン開始 
+          button id="btn_count_stop"  class="btn btn-info    btn-block toggle" style="display:none;" カウントダウン中止 
+        div class="span6"
+          button class="btn btn-warning btn-block btn-scroll-up" 作り直す
+      div class="row-fluid" style="margin-top:10px;"
+        div class="span12"
+          div class="progress"
+            div id="progress_bar" class="bar bar-success" style="width:0%;"
+      div class="row-fluid"  style="text-align:center;"
+        div class="span12"
+          span id="remaining_sec" style="font-size:32px"
+
+      div class="row"
+        div class="span12"
+          p
+            strong class="pong" 
+            span  したい
+          p
+            strong class="pong"
+            span  向けの 
+          p
+            strong class="pong"
+            span  というプロダクトは
+          p
+            strong class="pong"
+            span  です。これは、
+          p
+            strong class="pong"
+            span  ができ
+          p
+            strong class="pong"
+            span  とは違って 
+          p
+            strong class="pong"
+            span  が備わっています。 
+        
+      hr style="margin-top:800px;" 
 
       div class="footer"
-        p &copy; Company 2012
+        p
+          span created by
+          a href="https://twitter.com/ymmtmsys"  @ymmtmsys 
 
     <!-- Le javascript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
