@@ -72,7 +72,7 @@ $(function() {
         }
 
         var i = $('.btn-scroll-down').index(this)
-        var p = $('hr').eq(i).offset().top;
+        var p = $('.separator').eq(i).offset().top;
         return scrollPage(p);
     });
 
@@ -82,7 +82,7 @@ $(function() {
 
     $('.btn-scroll-up').click(function () {
         var i = $('.btn-scroll-up').index(this)
-        var p = $('hr').eq(i).offset().top;
+        var p = $('.separator').eq(i).offset().top;
         return scrollPage(p);
     });
 
