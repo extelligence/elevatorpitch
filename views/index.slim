@@ -2,13 +2,13 @@ doctype html
 html lang="ja"
   head
     meta charset="utf-8"
-    title The Elevatorpitch 
+    title The Elevatorpitch
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta name="description" content="エレベーターピッッチの作成をお手伝いします。テンプレートに言葉をはめて、30 秒で話せるようになりましょう。"
 
     <!-- Le styles -->
     link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet"
-    css: 
+    css:
       body {
         padding-top: 20px;
         padding-bottom: 40px;
@@ -44,6 +44,10 @@ html lang="ja"
       .marketing p + h4 {
         margin-top: 28px;
       }
+
+      .elevatorpitch {
+        font-size: 24px;
+      }
     link href="/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet"
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -59,78 +63,57 @@ html lang="ja"
     link rel="apple-touch-icon-precomposed" href="/bootstrap/ico/apple-touch-icon-57-precomposed.png"
   body
     div class="container-narrow"
-      div class="masthead"
-        ul class="nav nav-pills pull-right"
-          li
-            a href="#" Contact
-        h3 class="muted"
-            a href="/" The Elevatorpitch 
-
-      hr
-
       div class="jumbotron"
         h1 エレベータピッチを君の手に
         p class="lead" The Elevatorpitch はエレベーターピッチの作成のお手伝いをします。用意されたテンプレートに言葉を埋め、30 秒で話せられるように練習することができます。さあ、早速試してみましょう。
-        button class="btn btn-success btn-block btn-scroll-down" エレベーターピッチを作成する 
+        button class="btn btn-success btn-block btn-scroll-down" エレベーターピッチを作成する
 
-      hr style="margin-top:800px;" 
-
-      div class="row-fluid"
-        div class="span12"
-          p テンプレートを埋めて、エレベーターピッチを決めましょう。
-      div class="row-fluid"
-        div class="span12"
-          form class="form-pitch" method="GET"
-            div class="controls"
-              input class="span9" type="text" placeholder="抱えている課題を解決" value=""
-              span  class="help-inline" したい
-            div class="controls"
-              input class="span9" type="text" placeholder="対象顧客" value=""
-              span  class="help-inline" 向けの 
-            div class="controls"
-              input class="span9"  type="text" placeholder="プロダクト名" value=""
-              span  class="help-inline" というプロダクトは
-            div class="controls"
-              input class="span9"  type="text" placeholder="プロダクトのカテゴリー" value=""
-              span  class="help-inline" です。  これは、
-            div class="controls"
-              input  class="span9" type="text" placeholder="重要な利点、対価に見合う説得力のある理由" value=""
-              span  class="help-inline" ができ
-            div class="controls"
-              input  class="span9" type="text" placeholder="代替手段の最右翼" value=""
-              span  class="help-inline" とは違って 
-            div class="controls"
-              input  class="span9" type="text" placeholder="差別化の決定的な特徴" value=""
-              span  class="help-inline" が備わっています。 
-            div class="controls"
-              input type="submit" class="btn btn-success btn-scroll-down btn-block" id="btn-submit" value="決まったら次は練習ですね。" 
- 
-      hr style="margin-top:800px;" 
-
-      div class="jumbotron"
+      hr class="form" style="margin-top:800px;"
 
       div class="row-fluid"
-        div class="span6"
-          button id="btn_count_start" class="btn btn-success btn-block toggle" カウントダウン開始 
-          button id="btn_count_stop"  class="btn btn-info    btn-block toggle" style="display:none;" カウントダウン中止 
-        div class="span6"
-          button class="btn btn-warning btn-block btn-scroll-up" 作り直す
-      div class="row-fluid" style="margin-top:10px;"
         div class="span12"
-          div class="progress"
-            div id="progress_bar" class="bar bar-success" style="width:0%;"
-      div class="row-fluid"  style="text-align:center;"
+          span テンプレートを埋めましょう。
+      div class="row-fluid"
+        div class="span12 alert alert-error" style="display:none"
+          button type="button" class="close" data-dismiss="alert" x
+          span 全て入力してくださいね。
+      div class="row-fluid"
+        div class="span12 well"
+          div class="controls"
+            input class="span9" type="text" placeholder="抱えている課題を解決" value=""
+            span  class="help-inline" したい
+          div class="controls"
+            input class="span9" type="text" placeholder="対象顧客" value=""
+            span  class="help-inline" 向けの
+          div class="controls"
+            input class="span9"  type="text" placeholder="プロダクト名" value=""
+            span  class="help-inline" というプロダクトは
+          div class="controls"
+            input class="span9"  type="text" placeholder="プロダクトのカテゴリー" value=""
+            span  class="help-inline" です。  これは、
+          div class="controls"
+            input  class="span9" type="text" placeholder="重要な利点、対価に見合う説得力のある理由" value=""
+            span  class="help-inline" ができ
+          div class="controls"
+            input  class="span9" type="text" placeholder="代替手段の最右翼" value=""
+            span  class="help-inline" とは違って
+          div class="controls"
+            input  class="span9" type="text" placeholder="差別化の決定的な特徴" value=""
+            span  class="help-inline" が備わっています。
+      div class="row-fluid"
         div class="span12"
-          span id="remaining_sec" style="font-size:32px"
+          button class="btn btn-success btn-scroll-down btn-block" id="btn-submit" 決まったら次は練習ですね。
 
-      div class="row"
-        div class="span12"
+      hr style="margin-top:800px;"
+
+      div class="row-fluid"
+        div class="span12 elevatorpitch well"
           p
-            strong class="pong" 
+            strong class="pong"
             span  したい
           p
             strong class="pong"
-            span  向けの 
+            span  向けの
           p
             strong class="pong"
             span  というプロダクトは
@@ -142,17 +125,32 @@ html lang="ja"
             span  ができ
           p
             strong class="pong"
-            span  とは違って 
+            span  とは違って
           p
             strong class="pong"
-            span  が備わっています。 
-        
-      hr style="margin-top:800px;" 
+            span  が備わっています。
+
+      div class="row-fluid"
+        div class="span6"
+          button id="btn_count_start" class="btn btn-success btn-block toggle" 練習開始
+          button id="btn_count_stop"  class="btn     btn-block toggle" style="display:none;" ストップ
+        div class="span6"
+          button class="btn btn-warning btn-block btn-scroll-up" 作り直す
+      div class="row-fluid" style="margin-top:10px;"
+        div class="span12"
+          div class="progress"
+            div id="progress_bar" class="bar bar-danger" style="width:0%;"
+      div class="row-fluid"  style="text-align:center;"
+        div class="span12"
+          span id="remaining_sec" class="badge badge-important" style="padding:10px 20px;font-size:32px"
+
+
+      hr style="margin-top:800px;"
 
       div class="footer"
         p
-          span created by
-          a href="https://twitter.com/ymmtmsys"  @ymmtmsys 
+          span created by 
+          a href="https://twitter.com/ymmtmsys" @ymmtmsys
 
     <!-- Le javascript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

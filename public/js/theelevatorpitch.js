@@ -7,13 +7,18 @@ $(function() {
     function initProgress(time) {
         $('#progress_bar').remove();
         $('.progress').append(
-            $('<div class="bar bar-success" id="progress_bar" style="width:0%"/>')
+            $('<div class="bar bar-danger" id="progress_bar" style="width:0%"/>')
         );
         $('#remaining_sec').text(time);
     }
 
+    function toggle() {
+        var buttons = $('.toggle').toggle();
+        buttons.eq(1).after(buttons.eq(0));
+    }
+
     var timelimit_sec = 5;
-    var timer_id      = null;
+    var timer_id;
 
     initProgress(timelimit_sec);
 
@@ -23,7 +28,7 @@ $(function() {
         var elapsed_msec   = 0;
 
         initProgress(timelimit_sec);
-        $('.toggle').toggle();
+        toggle();
 
         timer_id = setInterval(function() {
                 elapsed_msec += interval_msec;
@@ -34,20 +39,20 @@ $(function() {
                 }
                 if (progress == 100) {
                     remaining_sec = 0;
-                    clearInterval(timer_id);  
-                    $('.toggle').toggle();
+                    clearInterval(timer_id);
+                    toggle();
                 }
                 $('#progress_bar').css('width', progress + '%');
                 $('#remaining_sec').text(remaining_sec);
             },
             interval_msec
         );
-    }); 
+    });
 
     $('#btn_count_stop').click(function() {
         initProgress(timelimit_sec);
-        clearInterval(timer_id);  
-        $('.toggle').toggle();
+        clearInterval(timer_id);
+        toggle();
     });
 
     $('.btn-scroll-down').click(function () {
@@ -56,22 +61,29 @@ $(function() {
             $(':text').each(function() {
                 if ($(this).val().length <= 0) {
                     empty = true;
-                    return false;    
+                    return false;
                 }
             });
             if (empty == true) {
-                return false; 
+                $('.alert').show();
+                return scrollPage($('hr[class=form]').eq(0).offset().top);
             }
+            $('.alert').hide();
         }
+
         var i = $('.btn-scroll-down').index(this)
-        var p = $('hr').eq(i + 1).offset().top;
-        return scrollPage(p);       
+        var p = $('hr').eq(i).offset().top;
+        return scrollPage(p);
+    });
+
+    $('.close').click(function() {
+        $(this).parent('.alert').hide();
     });
 
     $('.btn-scroll-up').click(function () {
         var i = $('.btn-scroll-up').index(this)
-        var p = $('hr').eq(i + 1).offset().top;
-        return scrollPage(p);       
+        var p = $('hr').eq(i).offset().top;
+        return scrollPage(p);
     });
 
     $('#btn-submit').click(function() {
@@ -80,5 +92,5 @@ $(function() {
         $.each(texts, function(index, _) {
             pongs.eq(index).text($(this).val())
         });
-    }); 
+    });
 });
