@@ -65,7 +65,7 @@ html lang="ja"
     div class="container-narrow"
       div class="jumbotron"
         h1 エレベータピッチを君の手に
-        p class="lead" The Elevatorpitch はエレベーターピッチの作成のお手伝いをします。用意されたテンプレートに言葉を埋め、30 秒で話せられるように練習することができます。さあ、早速試してみましょう。
+        p class="lead" このサイトはエレベーターピッチの作成のお手伝いをします。テンプレートを使ってエレベータピッチを作成し、30 秒で話るように練習することができます。さあ、早速試してみましょう。
         button class="btn btn-success btn-block btn-scroll-down" エレベーターピッチを作成する
 
       hr class="form" style="margin-top:800px;"
@@ -147,10 +147,11 @@ html lang="ja"
 
       hr style="margin-top:800px;"
 
-      div class="footer"
-        p
-          span created by 
-          a href="https://twitter.com/ymmtmsys" @ymmtmsys
+      - if @twitter
+        div class="footer"
+          p
+            span created by 
+            a href="https://twitter.com/#{@twitter}" @#{@twitter}
 
     <!-- Le javascript ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

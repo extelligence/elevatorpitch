@@ -17,7 +17,7 @@ $(function() {
         buttons.eq(1).after(buttons.eq(0));
     }
 
-    var timelimit_sec = 5;
+    var timelimit_sec = 30;
     var timer_id;
 
     initProgress(timelimit_sec);
