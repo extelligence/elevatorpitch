@@ -6,6 +6,6 @@ configure do
 end
 
 get '/' do
-    @twitter = ENV['TWITTER'] || nil
+    @twitter = ENV['TWITTER']
     slim :index, :layout => false
 end
