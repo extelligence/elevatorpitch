@@ -66,7 +66,7 @@ $(function() {
             });
             if (empty == true) {
                 $('.alert').show();
-                return scrollPage($('hr[class=form]').eq(0).offset().top);
+                return scrollPage($('.form').eq(0).offset().top);
             }
             $('.alert').hide();
         }
